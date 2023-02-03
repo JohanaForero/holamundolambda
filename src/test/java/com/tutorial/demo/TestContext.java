@@ -11,43 +11,44 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
  * the context before passing it to your function.
  */
 public class TestContext implements Context {
-
-    private String awsRequestId = "EXAMPLE";
+	
+    /*private String awsRequestId = "EXAMPLE";
     private ClientContext clientContext;
     private String functionName = "EXAMPLE";
     private CognitoIdentity identity;
     private String logGroupName = "EXAMPLE";
     private String logStreamName = "EXAMPLE";
+    */
     private LambdaLogger logger = new TestLogger();
     private int memoryLimitInMB = 128;
     private int remainingTimeInMillis = 15000;
-    private String functionVersion = "EXAMPLE";
-    private String invokedFunctionArn = "EXAMPLE";
+    /*private String functionVersion = "EXAMPLE";
+    private String invokedFunctionArn = "EXAMPLE";*/
 
     @Override
     public String getAwsRequestId() {
-        return awsRequestId;
+        return null;
     }
 
-    public void setAwsRequestId(String value) {
+    /*public void setAwsRequestId(String value) {
         awsRequestId = value;
-    }
+    }*/
 
     @Override
     public ClientContext getClientContext() {
-        return clientContext;
+        return null;
     }
 
-    public void setClientContext(ClientContext value) {
+    /*public void setClientContext(ClientContext value) {
         clientContext = value;
-    }
+    }*/
 
     @Override
     public String getFunctionName() {
-        return functionName;
+        return "you";
     }
 
-    public void setFunctionName(String value) {
+   /* public void setFunctionName(String value) {
         functionName = value;
     }
 
@@ -76,7 +77,7 @@ public class TestContext implements Context {
 
     public void setLogStreamName(String value) {
         logStreamName = value;
-    }
+    }*/
 
     @Override
     public LambdaLogger getLogger() {
@@ -107,30 +108,44 @@ public class TestContext implements Context {
 
     @Override
     public String getFunctionVersion() {
-        return functionVersion;
+        return null;
     }
 
-    public void setFunctionVersion(String value) {
-        functionVersion = value;
-    }
+    
 
     @Override
     public String getInvokedFunctionArn() {
-        return invokedFunctionArn;
+        return null;
     }
 
-    public void setInvokedFunctionArn(String value) {
-        invokedFunctionArn = value;
-    }
 
     /**
      * A simple {@code LambdaLogger} that prints everything to stderr.
      */
-    private static class TestLogger implements LambdaLogger {
+  private static class TestLogger implements LambdaLogger {
 
         @Override
         public void log(String message) {
             System.err.println(message);
         }
     }
+
+
+	@Override
+	public String getLogGroupName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getLogStreamName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CognitoIdentity getIdentity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

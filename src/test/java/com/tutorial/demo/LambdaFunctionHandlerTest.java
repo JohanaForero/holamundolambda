@@ -18,14 +18,14 @@ public class LambdaFunctionHandlerTest {
     @BeforeClass
     public static void createInput() throws IOException {
         // TODO: set up your sample input object here.
-        nombre = null;
+        nombre = "df";
     }
 
     private Context createContext() {
         TestContext ctx = new TestContext();
 
         // TODO: customize your context here if needed.
-        ctx.setFunctionName("Your Function Name");
+        ctx.getFunctionName();
 
         return ctx;
     }
